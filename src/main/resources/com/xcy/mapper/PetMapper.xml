@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xcy.mapper.PetMapper">
+    <sql id="petSql">
+        SELECT  distinct strain from pet
+    </sql>
+    <sql id="whereSql">
+        <where>
+            <if test="type != null and type !=''">
+                and type = #{type}
+            </if>
+        </where>
+    </sql>
+    <sql id="whereSql2">
+        <where>
+            <if test="sex != null and sex !=''">
+                and sex = #{sex}
+            </if>
+        </where>
+    </sql>
+    <sql id="whereSql3">
+        <where>
+            <if test="paixu == 0">
+                order by petprice ASC
+            </if>
+            <if test="paixu == 1">
+                order by petprice DESC
+            </if>
+            <if test="paixu != 1 and paixu != 0">
+
+            </if>
+        </where>
+    </sql>
+    <select id="petStrainList" resultType="PetSingle">
+        <include refid="petSql"></include>
+        <include refid="whereSql"></include>
+    </select>
+    <select id="selectPet" parameterType="selectByType" resultType="Pet">
+        select * from pet
+        <include refid="whereSql2"></include>
+        <include refid="whereSql3"></include>
+    </select>
+    <select id="selectPetById" parameterType="int" resultType="Pet">
+        select * from pet where id = #{id}
+    </select>
+    <select id="selectPetByAid" parameterType="int" resultType="Pet">
+        select * from pet where aid = #{aid}
+    </select>
+    <select id="showBankName" resultType="Bank">
+        select b.bank_name from bank b
+    </select>
+    <insert id="addBankName" parameterType="String">
+        insert into bank(bank_name) values (#{bank_name})
+    </insert>
+    <insert id="addMyBankCard" parameterType="Bank">
+        insert into bank(cardpeople,phonenum) values (#{cardpeople},#{phonenum})
+    </insert>
+</mapper>

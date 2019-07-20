@@ -12,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Controller
 @EnableSwagger2
-public class HelloController {
+public class AdminController {
     @Autowired
     AdminService adminService;
 

@@ -7,25 +7,10 @@ public class Admin {
     private int phonenum;
     private String address;
     private String name;
-    private String card_name;
+    private String card_num;
+    private  int bank_id;
+    private String  status;
 
-    public String getCard_name() {
-        return card_name;
-    }
-
-    public void setCard_name(String card_name) {
-        this.card_name = card_name;
-    }
-
-    public String getBank_name() {
-        return bank_name;
-    }
-
-    public void setBank_name(String bank_name) {
-        this.bank_name = bank_name;
-    }
-
-    private String bank_name;
     public int getId() {
         return id;
     }
@@ -74,6 +59,30 @@ public class Admin {
         this.name = name;
     }
 
+    public String getCard_num() {
+        return card_num;
+    }
+
+    public void setCard_num(String card_num) {
+        this.card_num = card_num;
+    }
+
+    public int getBank_id() {
+        return bank_id;
+    }
+
+    public void setBank_id(int bank_id) {
+        this.bank_id = bank_id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Admin{" +
@@ -83,6 +92,9 @@ public class Admin {
                 ", phonenum=" + phonenum +
                 ", address='" + address + '\'' +
                 ", name='" + name + '\'' +
+                ", card_num='" + card_num + '\'' +
+                ", bank_id=" + bank_id +
+                ", status='" + status + '\'' +
                 '}';
     }
 }
