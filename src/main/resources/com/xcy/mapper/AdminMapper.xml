@@ -7,6 +7,11 @@
         select  count(1) from admin where username = #{username}
         and password = #{password}
     </select>
+
+    <select id="isLogin" parameterType="Admin" resultType="int">
+        select id from admin where username = #{username}
+    </select>
+
     <insert id="zhuce" parameterType="com.xcy.pojo.Admin">
         insert into admin(username,password,phonenum,address,name,card_name,bank_name) values (#{username},#{password},#{phonenum},#{address},#{name},#{card_name},#{bank_name})
     </insert>

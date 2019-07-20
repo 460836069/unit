@@ -9,6 +9,8 @@ public interface AdminMapper {
 
     int login(Admin admin);
 
+    int isLogin(Admin admin);
+
     int zhuce(Admin admin);
 
     int validatename(String username);

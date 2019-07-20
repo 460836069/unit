@@ -29,10 +29,10 @@
                 order by petprice DESC
             </if>
             <if test="paixu != 1 and paixu != 0">
-
             </if>
         </where>
     </sql>
+
     <select id="petStrainList" resultType="PetSingle">
         <include refid="petSql"></include>
         <include refid="whereSql"></include>

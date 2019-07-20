@@ -16,6 +16,11 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public int isLogin(Admin admin) {
+        return  adminMapper.isLogin(admin);
+    }
+
+    @Override
     public int zhuce(Admin admin) {
         return adminMapper.zhuce(admin);
     }
