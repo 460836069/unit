@@ -12,7 +12,7 @@ public interface AdminPetService {
     List<AdminPet> selectByPrice(int a);
 
 
-    List<AdminPet> selectLike(Model model);
+    List<AdminPet> selectLike(int aa);
 
     List<AdminPet> selectName(Model model);
 }

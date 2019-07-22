@@ -18,9 +18,16 @@
         select admin.address,admin.name,pet.* from admin,pet where pet.aid = admin.id
 
     </select>
-    <select id="selectLike" resultType="AdminPet">
-        select admin.address,admin.name,pet.* from admin,pet where pet.aid = admin.id like '%' = #{strain}
+    <select id="selectLike" resultType="AdminPet" parameterType="int">
+        select admin.address,admin.name,pet.* from admin,pet where pet.aid = admin.id and admin.status = '个人'
     </select>
+    <select id="selectLike1" resultType="AdminPet" parameterType="int">
+        select admin.address,admin.name,pet.* from admin,pet where pet.aid = admin.id and admin.status = '商户'
+    </select>
+    <select id="selectLike2" resultType="AdminPet" parameterType="int">
+        select admin.address,admin.name,pet.* from admin,pet where pet.aid = admin.id
+    </select>
+
     <select id="selectName" resultType="AdminPet">
         select admin.address,admin.name,pet.* from admin,pet where pet.aid = admin.id like '%' = #{username}
     </select>

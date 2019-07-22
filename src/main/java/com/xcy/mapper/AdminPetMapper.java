@@ -18,7 +18,11 @@ public interface AdminPetMapper {
     List<AdminPet> getList(int a);
 
 
-    List<AdminPet> selectLike(Model model);
+    List<AdminPet> selectLike(int aa);
 
     List<AdminPet> selectName(Model model);
+
+    List<AdminPet> selectLike1(int aa);
+
+    List<AdminPet> selectLike2(int aa);
 }
